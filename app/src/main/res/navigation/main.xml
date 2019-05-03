@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main"
+            app:startDestination="@id/aFragment">
+
+    <fragment
+            android:id="@+id/aFragment"
+            android:name="com.giles.navigationtest.ui.AFragment"
+            android:label="AFragment"
+            tools:layout="@layout/a_fragment">
+            <action
+                android:id="@+id/showB"
+                app:destination="@id/bFragment"
+                app:enterAnim="@anim/slide_right_in"
+                app:exitAnim="@anim/slide_left_out"
+                app:popEnterAnim="@anim/slide_left_in"
+                app:popExitAnim="@anim/slide_right_out"
+            />
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/bFragment"
+            android:name="com.giles.navigationtest.ui.BFragment"
+            android:label="BFragment"
+            tools:layout="@layout/b_fragment">
+
+            <!-- pass argument-->
+            <argument
+                android:name="username"
+                android:defaultValue="Hello"
+                app:argType="string"/>
+
+        <action
+                android:id="@+id/showC"
+                app:destination="@id/cFragment"
+                app:enterAnim="@anim/slide_right_in"
+                app:exitAnim="@anim/slide_left_out"
+                app:popEnterAnim="@anim/slide_left_in"
+                app:popExitAnim="@anim/slide_right_out"/>
+
+    </fragment>
+    <fragment
+            android:id="@+id/cFragment"
+            android:name="com.giles.navigationtest.ui.CFragment"
+            android:label="CFragment"
+            tools:layout="@layout/c_fragment">
+
+        <!-- deep link -->
+        <deepLink app:uri="www.giles.com/test"/>
+
+        <action
+            android:id="@+id/popToA"
+            app:destination="@id/aFragment"
+            app:popUpTo="@+id/main"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out"
+        />
+    </fragment>
+</navigation>

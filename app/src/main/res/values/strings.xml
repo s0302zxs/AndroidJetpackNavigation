@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NavigationTest</string>
+    <integer name="slide_anim_duration">500</integer>
+</resources>
