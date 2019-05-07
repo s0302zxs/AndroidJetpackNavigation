@@ -24,6 +24,8 @@ Using Android Jetpack Navigation
 
 `classpath 'android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0'`
 
+## Introduction
+https://medium.com/@giles112000/android-jetpack-navigation-simple-use-cfac80b3e9c6
 
 ## Reference
 
